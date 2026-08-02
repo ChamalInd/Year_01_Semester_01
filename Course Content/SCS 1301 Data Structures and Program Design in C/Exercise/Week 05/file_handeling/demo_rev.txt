@@ -1,0 +1,3 @@
+Display the file’s content before and after the change to demonstrate that the rest of the file is unaffected.
+The program should replace the file’s content starting at the given position with the supplied string, without affecting the bytes that come before that position or the bytes well beyond the replaced region. 
+Write a program that asks the user for the name of an existing file, a byte position within that file, and a string. 

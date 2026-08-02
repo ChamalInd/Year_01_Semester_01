@@ -1,0 +1,88 @@
+body {
+	background-color: #202020;
+	color: white;
+	font-family: "Helvetica", "Segio";
+}
+
+#title {
+	font-size: 25px;
+	font-weight: bolder;
+	width: 100%;
+	text-align: center;
+}
+
+div {
+	width: 100%;
+	padding: 20px;
+}
+
+#input {
+	align-item: center;
+	justify-content: center;
+	text-align: center;
+}
+
+#input label, #input input, #input button {
+	margin: 10px;
+	padding: 5px;
+	border-radius: 10px;
+	border: none;
+	outline: none;
+}
+
+#input label, #input input {
+	width: 200px;
+}
+
+#input button {
+	width: 360px;
+}
+
+#output {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#output table {
+	margin: 0 10% 0 10%;
+}
+
+#output #result tr td:nth-child(1) {
+	width: 160px;
+	height: 30px;
+}
+
+#output #result tr td:nth-child(2) {
+	width: 10px;
+	height: 30px;
+	text-align: center;
+}
+
+#output #result tr td:nth-child(3) {
+	width: 100px;
+	height: 30px;
+	text-align: right;
+}
+
+#output #result tr:nth-child(4) td:last-child {
+	border-bottom: 1px solid white;
+}
+
+#output #result tr:last-child td:last-child {
+	font-weight: bolder;
+	height: 40px;
+	border-bottom: 2px solid white;
+}
+
+#output #rates tr td, #output #rates tr th {
+	text-align: center;
+	padding: 0 10px;
+}
+
+#output #rates, #output #rates td, #output #rates th {
+	border: 0.5px solid white;
+	border-collapse: collapse;
+	height: 40px;
+}
+

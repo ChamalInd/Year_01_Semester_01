@@ -1,0 +1,169 @@
+Here's a detailed command list for your slideshow, categorized by topics and including flags and examples from the provided PDF:
+
+### 1. Working with Files
+- `ls`: List directory contents
+  - Flags: `-l` (long listing format), `-a` (all files including hidden), `-h` (human-readable sizes)
+  - Example: `ls -lah`
+- `cat`: Concatenate and display file contents
+  - Flags: `-n` (number all output lines)
+  - Example: `cat -n filename`
+- `cp`: Copy files and directories
+  - Flags: `-r` (recursive), `-v` (verbose)
+  - Example: `cp -rv source_dir destination_dir`
+- `mv`: Move or rename files and directories
+  - Flags: `-v` (verbose)
+  - Example: `mv -v old_name new_name`
+- `rm`: Remove files or directories
+  - Flags: `-r` (recursive), `-f` (force)
+  - Example: `rm -rf directory_name`
+- `touch`: Create empty files
+  - Example: `touch newfile`
+- `file`: Determine file type
+  - Example: `file filename`
+
+### 2. Working with Directories
+- `pwd`: Print working directory
+  - Example: `pwd`
+- `cd`: Change directory
+  - Example: `cd /path/to/directory`
+- `mkdir`: Make directories
+  - Flags: `-p` (create parent directories as needed)
+  - Example: `mkdir -p new/dir/path`
+- `rmdir`: Remove empty directories
+  - Example: `rmdir directory_name`
+- `tree`: Display directory tree
+  - Flags: `-L` (level), `-d` (list directories only)
+  - Example: `tree -L 2`
+
+### 3. Learning about Users and Super Users
+- `whoami`: Display current user
+  - Example: `whoami`
+- `sudo`: Execute a command as another user (typically root)
+  - Example: `sudo command`
+- `su`: Switch user
+  - Example: `su - username`
+- `useradd`: Add a new user
+  - Flags: `-m` (create home directory), `-G` (add to groups)
+  - Example: `sudo useradd -m -G sudo newuser`
+- `usermod`: Modify a user account
+  - Flags: `-aG` (add to supplementary groups)
+  - Example: `sudo usermod -aG groupname username`
+- `userdel`: Delete a user account
+  - Flags: `-r` (remove home directory)
+  - Example: `sudo userdel -r username`
+- `passwd`: Change user password
+  - Example: `sudo passwd username`
+
+### 4. Learning about File Permissions
+- `ls -l`: List files with permissions
+  - Example: `ls -l`
+- `chmod`: Change file mode (permissions)
+  - Example: `chmod 755 filename`
+- `chown`: Change file owner and group
+  - Example: `sudo chown user:group filename`
+- `chgrp`: Change group ownership
+  - Example: `sudo chgrp groupname filename`
+
+### 5. Working with Devices and Networks
+- `df`: Report file system disk space usage
+  - Flags: `-h` (human-readable), `-T` (file system type)
+  - Example: `df -hT`
+- `du`: Estimate file space usage
+  - Flags: `-h` (human-readable), `-s` (summarize)
+  - Example: `du -hs /path/to/directory`
+- `mount`: Mount a file system
+  - Example: `sudo mount /dev/sdX /mnt`
+- `umount`: Unmount file systems
+  - Example: `sudo umount /mnt`
+- `ifconfig`: Configure network interfaces (deprecated, use `ip`)
+  - Example: `ifconfig eth0 up`
+- `ip`: Show/manipulate routing, devices, and tunnels
+  - Example: `ip addr show`
+- `ping`: Send ICMP ECHO_REQUEST to network hosts
+  - Example: `ping google.com`
+- `netstat`: Network statistics
+  - Flags: `-tuln` (listening ports)
+  - Example: `netstat -tuln`
+- `traceroute`: Print the route packets take to network host
+  - Example: `traceroute google.com`
+
+### 6. Some Other Tools (gzip, tar, wget, grep)
+- `gzip`: Compress files
+  - Example: `gzip filename`
+- `gunzip`: Decompress files
+  - Example: `gunzip filename.gz`
+- `tar`: Archive files
+  - Flags: `-cvf` (create archive), `-xvf` (extract archive), `-tvf` (list contents)
+  - Example: `tar -cvf archive.tar directory`
+- `wget`: Retrieve files from the web
+  - Flags: `-c` (continue download), `-P` (download directory)
+  - Example: `wget -c -P /path/to/directory http://example.com/file`
+- `grep`: Search text using patterns
+  - Flags: `-r` (recursive), `-i` (ignore case), `-n` (line number)
+  - Example: `grep -rin "search_term" /path/to/directory`
+
+### 7. Working with Processes
+- `ps`: Report a snapshot of current processes
+  - Flags: `-ef` (full-format listing)
+  - Example: `ps -ef`
+- `top`: Display Linux tasks
+  - Example: `top`
+- `htop`: Interactive process viewer
+  - Example: `htop`
+- `kill`: Send a signal to a process
+  - Example: `kill -9 PID`
+- `pkill`: Kill processes by name
+  - Example: `pkill process_name`
+- `bg`: Resume a job in the background
+  - Example: `bg %1`
+- `fg`: Bring a job to the foreground
+  - Example: `fg %1`
+- `jobs`: List active jobs
+  - Example: `jobs`
+
+### 8. Combining Commands
+- `|` (pipe): Pass the output of one command as input to another
+  - Example: `ls | grep "pattern"`
+- `>`: Redirect output to a file
+  - Example: `echo "text" > file`
+- `>>`: Append output to a file
+  - Example: `echo "text" >> file`
+- `<`: Redirect input from a file
+  - Example: `command < input_file`
+- `&&`: Execute command if the previous command is successful
+  - Example: `command1 && command2`
+- `;`: Execute commands sequentially
+  - Example: `command1; command2`
+
+### 9. Basic Bash Scripting
+- `#!/bin/bash`: Shebang to specify the script interpreter
+  - Example: `#!/bin/bash`
+- Variables: `VAR_NAME=value`
+  - Example: `NAME="John"`
+- Conditionals: `if`, `then`, `else`, `fi`
+  - Example:
+    ```bash
+    if [ condition ]; then
+      # commands
+    else
+      # commands
+    fi
+    ```
+- Loops: `for`, `while`, `do`, `done`
+  - Example:
+    ```bash
+    for i in {1..10}; do
+      echo "Number $i"
+    done
+    ```
+- Functions: `function_name() { commands; }`
+  - Example:
+    ```bash
+    my_function() {
+      echo "Hello, $1"
+    }
+    ```
+- `echo`: Display message
+  - Example: `echo "Hello, World!"`
+
+This detailed command list should provide a comprehensive guide for your slideshow. If you need any more specific details or further examples, feel free to ask!

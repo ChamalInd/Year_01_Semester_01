@@ -1,0 +1,340 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[top=2.5cm, bottom=2cm, left=2.2cm, right=2.2cm]{geometry}
+\usepackage{fancyhdr}
+\usepackage{amssymb}
+\usepackage[colorlinks=false, hidelinks]{hyperref}
+
+\title{Take Home Assignment 01}
+\author{A. A. C. Induwara}
+\date{June 2026}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Assignment 01}
+\fancyhead[R]{25000799\_A1}
+\fancyfoot[C]{\thepage}
+
+\begin{document}
+\pagenumbering{roman}
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+\pagenumbering{arabic}
+\setcounter{secnumdepth}{0}
+
+\section{Question 01}
+\subsection{(a)}
+\,
+\begin{tabular}{ccc|c|c|c|c|c}
+    $p$ & $q$ & $r$ & $p \land \neg q$ & $p \rightarrow q$ & $(p \land \neg q) \rightarrow r$ & $(p \rightarrow q) \rightarrow r$ & $((p \land \neg q) \rightarrow r )\leftrightarrow ((p \rightarrow q) \rightarrow r)$\\
+    \hline
+    T & T & T & F & T & T & T & T\\
+    T & T & F & F & T & T & F & F\\
+    T & F & T & T & F & T & T & T\\
+    T & F & F & T & F & F & T & F\\
+    F & T & T & F & T & T & T & T\\
+    F & T & F & F & T & T & F & F\\
+    F & F & T & F & T & T & T & T\\
+    F & F & F & F & T & T & F & F\\\\
+\end{tabular}
+According to the Truth Table $((p \land \neg q) \rightarrow r )\leftrightarrow ((p \rightarrow q) \rightarrow r)$ is \textbf{not a tautology}.\\
+$$\therefore ((p \land \neg q) \rightarrow r ) \not\equiv ((p \rightarrow q) \rightarrow r)$$\\
+Since the column $(p \land \neg q) \rightarrow r$ has both True and False as its truth value, $(p \land \neg q) \rightarrow r$ is a \textbf{contingency}.\\ 
+Since it is not a tautology, $(p \land \neg q) \rightarrow r$ is \textbf{invalid}.
+
+\subsection{(b)}
+
+\textbf{Converse} : If Yomal walks 2 km every day, then he is concerned about his cholesterol levels.\\\\
+\textbf{Contrapositive} : If Yomal will not walk 2 km every day, then he is not concerned with his cholesterol levels.\\\\
+\textbf{Inverse} : If Yomal is not concerned about his cholesterol levels, then he will not walk 2 km every day.\\
+
+\subsection{(c)}
+\begin{tabular}{lcll} 
+    $(p \lor q) \land p$ & $\equiv$ & $(p \land p) \lor (p \land q)$ & Distributive law\\\\
+     & $\equiv$ & $p \lor (p \land q)$ & Idempotent law\\\\
+     & $\equiv$ & $(p \land T) \lor (p \land q)$ & Identity law\\\\
+     & $\equiv$ & $p \land (T \lor q)$ & Distributive law\\\\
+     & $\equiv$ &$p \land T$ & Domination law\\\\
+     & $\equiv$ &$p$ & Identity law\\\\
+\end{tabular}
+
+\subsection{(d)}
+\begin{tabular}{lcll} 
+$\neg (p \lor (\neg p \land q))$ & $\equiv$ & $\neg p \land \neg (\neg p \land q)$ & De Morgan's law\\\\
+ & $\equiv$ & $\neg p \land (\neg \neg p \lor \neg q)$ & De Morgan's law\\\\
+ & $\equiv$ & $\neg p \land (p \lor \neg q)$ & Double Negation law\\\\
+ & $\equiv$ & $(\neg p \land p) \lor (\neg p \land \neg q)$ & Distributive law\\\\
+ & $\equiv$ & $F \lor (\neg p \land \neg q)$ & Negation law\\\\
+ & $\equiv$ & $\neg p \land \neg q$ & Identity law\\\\
+\end{tabular}
+\newpage
+\section{Question 02}
+\subsection{(a)}
+\,
+
+\begin{itemize}
+    \item[( i )] $\neg \forall x(\neg p(x) \land \neg q(x))$ is \textbf{True}
+    \item[] $\neg p(x)$ means $x \geq -1$ and $\neg q(x)$ means $ x < 1$
+    \item [] $\therefore -1 \leq x < 1$
+    \item[] The quantifier don't satisfy for every x value since not every real number is in between -1 and 1.
+    \item[] $\therefore \forall x(\neg p(x) \land \neg q(x))$ is False
+    \item[] $\therefore \neg \forall x(\neg p(x) \land \neg q(x))$ is True\\
+    
+    \item[( ii )] $\neg \exists x(\neg p(x) \lor \neg q(x))$ is \textbf{False}
+    \item[] $\neg p(x)$ means $x \geq -1$ and $\neg q(x)$ means $ x < 1$
+    \item [] $\therefore x \geq -1$ or $ x < 1$
+    \item[] Condition is satisfied for any value of x.
+    \item[] $\therefore \exists x(\neg p(x) \lor \neg q(x))$ is True
+    \item[] $\therefore \neg \exists x(\neg p(x) \lor \neg q(x))$ is False\\
+    
+    \item[( iii )] $\neg \forall x\neg p(x) \lor \neg \exists xq(x)$ is \textbf{True}
+    \item[] $\neg p(x)$ means $x \geq -1$
+    \item [] $\therefore \forall x \neg p(x)$ is False when $x = -2$ (counterexample)
+    \item [] $\therefore \neg \forall x \neg p(x)$ is True when $x = -2$ (counterexample)
+    \item[] True $\lor$ anything is True
+    \item[] $\therefore \neg \forall x\neg p(x) \lor \neg \exists xq(x)$ is True \\ 
+    
+    \item[( iv )] $\neg \exists x\neg p(x) \land \neg \exists x \neg q(x)$ is \textbf{False}
+    \item[] $\neg p(x)$ means $x \geq -1$
+    \item [] $\therefore \exists x \neg p(x)$ is True when $x = -1$
+    \item [] $\therefore \neg \exists x \neg p(x)$ is False when $x = -1$
+    \item[] False $\land$ anything is False
+    \item[] $\neg \exists x\neg p(x) \land \neg \exists x \neg q(x)$ is False \\
+\end{itemize}
+
+\subsection{(b)}
+\,
+\begin{itemize}
+    \item[( i )] $\exists x (O(x) \land P(x))$
+    \item[( ii )] $\forall x (\neg E(x) \rightarrow O(x))$
+    \item[( iii )] $\forall x ((E(x) \land P(x)) \rightarrow (x = 2))$
+    \item[( iv )] $\exists x \exists y (P(x) \land P(y) \land \neg P(x + y))$
+    \item[( v )] $\forall x \forall y (P(x) \land P(y) \rightarrow \neg P(x . y))$
+\end{itemize}
+\newpage
+
+\section{Question 03}
+\subsection{(a)}
+\,\\
+\begin{tabular}{rll}
+     1. & $n$ & Proof by contradiction\\
+     2. & $m$ & Assume\\
+     3. & $m \land n$ & Conjunction of 1. and 2.\\
+     4. & $(m \land n) \rightarrow (p \lor \neg q)$ & Premise\\
+     5. & $p \lor \neg q$ & Modus Ponens of 3. and 4.\\
+     6. & $m \rightarrow (r \land \neg p)$ & Premise\\
+     7. & $r \land \neg p$ & Modus Ponend of 2. and 6.\\
+     8. & $\neg p$ & Simplification of 7.\\
+     9. & $\neg q$ & Disjunctive Syllogism of 5. and 8.\\
+     10. & $r$ & Simplification of 7.\\\\
+\end{tabular}
+\,\\
+No contradiction has occurred. All the premises holds while the conclusion is False.\\
+$\therefore$ The argument is \textbf{invalid}.\\\\
+Counter example;\\\\
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+$m$ & $p$ & $q$ & $r$ & $n$\\
+\hline
+T & F & F & T & T\\
+\hline
+\end{tabular}
+
+\subsection{(b)}
+\,
+\begin{itemize}
+    \item[( i )] $e \rightarrow (u \lor s)$
+    \item[] $\neg s \land \neg u \rightarrow \neg e$
+    \item[( ii )] $(e \rightarrow (u \lor s)) \rightarrow (\neg s \land \neg u \rightarrow \neg e)$ 
+    \item[( iii )]
+    \item[]
+        \begin{tabular}{ccc|c|c|c|c|c}
+            $e$ & $u$ & $s$ & $u \lor s$ & $\neg s \land \neg u$ & $e \rightarrow ( u \lor s)$ & $(\neg s \land \neg u) \rightarrow \neg e$ & $(e \rightarrow (u \lor s)) \rightarrow (\neg s \land \neg u \rightarrow \neg e)$\\
+            \hline
+            T & T & T & T & F & T & T & T\\
+            T & T & F & T & F & T & T & T\\
+            T & F & T & T & F & T & T & T\\
+            T & F & F & F & T & F & F & T\\
+            F & T & T & T & F & T & T & T\\
+            F & T & F & T & F & T & T & T\\
+            F & F & T & T & F & T & T & T\\
+            F & F & F & F & T & T & T & T\\
+        \end{tabular}
+    \item[]The $(e \rightarrow (u \lor s)) \rightarrow (\neg s \land \neg u \rightarrow \neg e)$ is a tautology, $\therefore$ the argument is \textbf{valid}.\\
+    \item[( iv )] $\neg s \land \neg u \rightarrow \neg e$ is the contrapositive of the compound proposition $e \rightarrow (u \lor s)$ because, $\neg s \land \neg u \equiv \neg(s \lor u)$ (from De Morgan's Law). \\$\therefore$ they should be logically equivalent as shown in the truth table. \\Since they are logically equivalent, one should implies the other. \\$\therefore$ The argument is logically valid.
+\end{itemize}
+
+\subsection{(c)}
+\,\\
+Let the domain of n be all the real numbers,\\
+\hspace*{0.7cm}$\therefore p = n > 4$\\
+\hspace*{1cm}$q = n^2 > 16$\\
+
+\begin{tabular}{ll}
+$p \rightarrow q$ & Premise\\
+$\neg q$ & Premise\\
+\hline
+$\neg p$ & Conclusion\\\\
+\end{tabular}
+
+$\therefore$The argument is \textbf{valid} by Modus Tollens.
+
+\newpage
+\section{Question 04}
+\subsection{(a)}
+\begin{itemize}
+    \item[( 1 ) ] $V \rightarrow U$
+    \item[( 2 ) ] $U \rightarrow R$
+    \item[( 3 ) ] $R \rightarrow A$
+    \item[( 4 ) ] $E \rightarrow U$
+    \item[( 5 ) ] $E \rightarrow \neg R$
+    \item[( 6 ) ] $E$
+\end{itemize}
+
+\subsection{(b)}
+\begin{itemize}
+    \item[C1 :] $\neg V \lor U$
+    \item[C2 :] $\neg U \lor R$
+    \item[C3 :] $\neg R \lor A$
+    \item[C4 :] $\neg E \lor U$
+    \item[C5 :] $\neg E \lor \neg R$
+    \item[C6 :] $E$
+\end{itemize}
+
+\subsection{(c)}
+\begin{tabular}{rl}
+    From C5 and C6 : & $\neg E \lor \neg R \lor E$ \\\\
+    C7 : & $\neg R$ \\\\
+    From C4 and C6 : & $\neg E \lor U \lor E$\\\\
+    C8 : & $U$ \\\\
+    From C2 and C8 : & $\neg U \lor R \lor U$\\\\
+    C9 : & $R$\\\\
+    From C7 and C9 : & $\neg R \lor R$\\\\
+    C10 : & $\square$\\\\
+\end{tabular}
+\,\\
+$\therefore$ The knowledge base is \textbf{inconsistent}.\\
+
+\subsection{(d)}
+\,\\
+Minimal set of requirements = C2, C4, C5, C6\\
+C2 : $\neg U \lor R$\\
+C4 : $\neg E \lor U$\\
+C5 : $\neg E \lor \neg R$\\
+C6 : $E$\\
+
+The inconsistency occur due to the occurrence of both $R$ and $\neg R$. According to the logic of the knowledge base when the answer script uploads the receipt should be generated, but when in emergency mode the receipt is not generated. These two contradicts each other. To prevent this we can alter the clause 5 as bellow,\\\\
+C5$^1$ : $\neg E \lor A$\\\\
+Now C7 becomes $A$ and C10 becomes $A \lor R$.\\\\
+\begin{tabular}{rl}
+    From C10 and C3 : & $A \lor R \lor \neg R \lor A$ \\\\
+    C11 : & $A \lor A$ \\\\
+    C11 : & $A$ \\\\
+    From C11 and C1 : & $A \lor \neg V \lor U$\\\\
+\end{tabular}
+\,\\
+No empty clause if derived,\\
+Now the knowledge base is \textbf{consistent}.
+
+\newpage
+\section{Question 05}
+\subsection{(a)}
+\,
+\begin{itemize}
+    \item[( i )] $\forall x (F(x) \rightarrow E(x))$
+    \item[( ii )] $\forall x (A(x) \rightarrow \exists y(C(y) \land R(y,x)))$
+    \item[( iii )] $\exists y (C(y) \land \forall x(A(x) \rightarrow R(y,x)))$
+    \item[( iv )] $\exists x (A(x) \land \neg E(x))$
+\end{itemize}
+
+\subsection{(b)}
+\,
+No they are not logically equivalent.\\
+For something to be logically equivalent it should be as follows,\\
+(ii) $\leftrightarrow$ (iii)\\
+(iii) $\rightarrow$ (ii) is True, but (ii) $\rightarrow$ (iii) is not.\\\\
+
+Assume two AI projects as p1 and p2 and two certified reviewers r1 and r2, where r1 reviewed p1 and r2 reviewed p2.\\\\
+\hspace*{0.7cm}$\therefore A(p1)$ \& $A(p2)$\\\\
+\hspace*{1cm}$C(r1)$ \& $C(r2)$\\\\
+\hspace*{1cm}$R(r1, p1)$ \& $R(r2, p2)$\\\\
+
+This implies (ii) is True but (iii) is False since one reviewer didn't reviewed every AI project.\\\\
+$\therefore$ (ii) $\rightarrow$ (iii) is False\\
+$\therefore$ (ii) $\not \equiv$ (iii)
+
+\subsection{(c)}
+\,\\
+\begin{tabular}{rll}
+    1. & $\forall x (F(x) \rightarrow E(x))$ & Premise\\\\
+    2. & $\exists x (A(x) \land \neg E(x))$ & Premise\\\\
+    3. & $F(c) \rightarrow E(c)$ & Universal Instantiation of 1.\\\\
+    4. & $A(c) \land \neg E(c)$ & Existential Instantiation of 2.\\\\
+    5. & $A(c)$ & Simplification of 4.\\\\
+    6. & $\neg E(c)$ & Simplification of 4.\\\\
+    7. & $\neg F(c)$ & Modus Tollens of 4. and 3.\\\\
+    8. & $A(c) \land \neg F(c)$ & Conjunction of 7. and 5.\\\\
+    9. & $\exists x (A(x) \land \neg F(x))$ & Existential Generalization of 8.\\\\
+\end{tabular}
+
+\subsection{(d)}
+\,\\
+\begin{tabular}{ll}
+    $\neg \exists y (C(y) \land \forall x(A(x) \rightarrow R(y,x)))$ & \\\\
+    $\forall y \neg (C(y) \land \forall x(A(x) \rightarrow R(y,x)))$ & \\\\
+    $\forall y (\neg C(y) \lor \neg \forall x(A(x) \rightarrow R(y,x)))$ & De Morgan's Law\\\\
+    $\forall y (\neg C(y) \lor \exists x \neg (A(x) \rightarrow R(y,x)))$ &\\\\
+    $\forall y (\neg C(y) \lor \exists x \neg (\neg A(x) \lor R(y,x)))$ &\\\\
+    $\forall y (\neg C(y) \lor \exists x (\neg \neg A(x) \land \neg R(y,x)))$ & De Morgan's Law\\\\
+    $\forall y (\neg C(y) \lor \exists x (A(x) \land \neg R(y,x)))$ & Double Negation Law\\\\
+    $\forall y (C(y) \rightarrow \exists x (A(x) \land \neg R(y,x)))$ &\\\\
+\end{tabular}
+
+For every certified project reviewer, there are some AI projects that are not reviewd by him.
+
+\newpage
+\section{Question 06}
+\subsection{(a)}
+\,\\
+\begin{itemize}
+    \item[( 1 )]$\forall x(S(x) \land D(x) \rightarrow T(x))$
+    \item[( 2 )]$\forall x(C(x) \rightarrow T(x))$
+    \item[( 3 )]$\exists x(S(x) \land \neg T(x))$
+\end{itemize}
+
+\subsection{(b)}
+\,\\
+\begin{tabular}{rll}
+    1. & $\forall x(S(x) \land D(x) \rightarrow T(x))$ & Premise\\\\
+    2. & $\exists x(S(x) \land \neg T(x))$ & Premise\\\\
+    3. & $S(c) \land D(c) \rightarrow T(c)$ & Universal Instantiation of 1.\\\\
+    4. & $S(c) \land \neg T(c)$ & Existential Instantiation of 2.\\\\
+    5. & $S(c)$ & Simplification of 4.\\\\
+    6. & $\neg T(c)$ & Simplification of 4.\\\\
+    7. & $\neg (S(c) \land D(c))$ & Modus Tollens of 6. and 3.\\\\
+    8. & $\neg S(c) \lor \neg D(c)$ & De Morgan's Law of 7.\\\\
+    9. & $\neg D(c)$ & Disjunctive Syllogism of 5. and 8.\\\\
+    10. & $S(c) \land \neg D(c)$ & Conjunction of 5. and 9.\\\\
+    11. & $\exists x (S(x) \land \neg D(x))$ & Existential Generalization of 10.\\\\
+\end{tabular}
+
+\subsection{(c)}
+\,\\
+\begin{tabular}{rll}
+    1. & $\forall x(C(x) \rightarrow T(x))$ & Premise\\\\
+    2. & $\exists x(S(x) \land \neg T(x))$ & Premise\\\\
+    3. & $C(c) \rightarrow T(c)$ & Universal Instantiation of 1.\\\\
+    4. & $S(c) \land \neg T(c)$ & Existential Instantiation of 2.\\\\
+    5. & $S(c)$ & Simplification of 4.\\\\
+    6. & $\neg T(c)$ & Simplification of 4.\\\\
+    7. & $\neg C(c)$ & Modus Tollens of 6. and 3.\\\\
+    8. & $S(c) \land \neg C(c)$ & Conjunction of 5. and 7.\\\\
+    9. & $\exists x (S(x) \land \neg C(x))$ & Existential Generalization of 8.\\\\
+\end{tabular}
+
+\subsection{(d)}
+\,\\
+In existential quantifiers the truth value becomes True only for some occurrences of the logical argument. Therefore when using existential instantiation in above derivations, the witness ( c ) is kept constant throughout the procedure, to make sure that we are currently handling the logical argument inside the same system.
+
+\end{document}

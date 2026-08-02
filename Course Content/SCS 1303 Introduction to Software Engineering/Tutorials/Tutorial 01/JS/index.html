@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<title>Electricity Billing System</title>
+		<link href="styles.css" rel="stylesheet">
+	</head>
+	<body>
+		<p id="title">Electricity Billing System</p>
+		<div id="input">
+			<label for="prev_r">Previous Reading</label>	
+			<input type="number" id="r1" name="prev_r" min="0">
+			<br>
+			<label for="cur_r">Current Reading</label>
+			<input type="number" id="r2" name="cur_r" min="0">
+			<br>
+			<button id="calc_btn" type="button" onclick="Calculate()">Calculate Bill</button>
+		</div>
+
+		<div id="output">
+			<table id="result">
+				<tr>
+					<td>Units Used</td>
+					<td>:</td>
+					<td><span id="units"></span></td>
+				</tr>
+				<tr>
+					<td>Charge on Units</td>
+					<td>:</td>
+					<td><span id="charge"></span></td>
+				</tr>
+				<tr>
+					<td>Fixed Charge</td>
+					<td>:</td>
+					<td><span id="fixed"></span></td>
+				</tr>
+				<tr>
+					<td>VAT on Bill</td>
+					<td>:</td>
+					<td><span id="vat"></span></td>
+				</tr>
+				<tr>
+					<td>Monthly Bill</td>
+					<td>:</td>
+					<td><span id="bill"></span></td>
+				</tr>
+			</table>
+			<table id="rates">
+				<tr>
+					<th>Range</th>
+					<th>Charge per unit</th>
+					<th>Fixed Charge</th>
+				</tr>
+				<tr>
+					<td>&nbsp;&nbsp;&nbsp;&nbsp;1 - &nbsp;&nbsp;30</td>
+					<td>Rs. &nbsp;&nbsp;&nbsp;10</td>
+					<td>Rs. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;75</td>
+				</tr>
+				<tr>
+					<td>&nbsp;&nbsp;31 - &nbsp;&nbsp;60</td>
+					<td>Rs. &nbsp;&nbsp;&nbsp;30</td>
+					<td>Rs. &nbsp;&nbsp;&nbsp;&nbsp;200</td>
+				</tr>
+				<tr>
+					<td>&nbsp;&nbsp;61 - &nbsp;&nbsp;90</td>
+					<td>Rs. &nbsp;&nbsp;&nbsp;50</td>
+					<td>Rs. &nbsp;&nbsp;&nbsp;&nbsp;400</td>
+				</tr>
+				<tr>
+					<td>&nbsp;&nbsp;91 - 120</td>
+					<td>Rs. &nbsp;&nbsp;&nbsp;70</td>
+					<td>Rs. &nbsp;1,000</td>
+				</tr>
+				<tr>
+					<td>121 - 180</td>
+					<td>Rs. &nbsp;110</td>
+					<td>Rs. &nbsp;1,500</td>
+				</tr>
+				<tr>
+					<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;> 180</td>
+					<td>Rs. &nbsp;130</td>
+					<td>Rs. &nbsp;2,000</td>
+				</tr>
+			</table>
+		</div>		
+
+		<script src="script.js"></script>
+	</body>
+</html>
