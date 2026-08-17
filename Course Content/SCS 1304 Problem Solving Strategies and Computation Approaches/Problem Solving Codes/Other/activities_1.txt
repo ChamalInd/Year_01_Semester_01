@@ -1,6 +1,0 @@
-2 : 5 : Homework
-6 : 10 : Presentation
-4 : 8 : Term Paper
-10 : 12 : Swimming Practice
-13 : 14 : Study Time
-7 : 15 : Hang out with friends
