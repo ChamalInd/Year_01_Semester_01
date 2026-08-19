@@ -13,8 +13,13 @@ void enqueue(int element)
 
     if (tail + 1 >= LIMIT)
     {
-        printf(RED "Queue is full.\n" RESET);
-        return;
+        if (head == 0 || tail++ % LIMIT == head)
+        {
+            printf(RED "Queue is full.\n" RESET);
+            return;
+        }
+        
+        tail = (tail + 1) % LIMIT;
     }
 
     tail++;
@@ -38,15 +43,12 @@ void dequeue()
 {
     if (!peek())
     {
-        for (int i = head; i < tail; i++)
-        {
-            queue[i] = queue[i+1];
-        }
-        tail--;
+        head++;
 
-        if (tail == -1)
+        if (head == tail)
         {
-            head--;
+            head = -1;
+            tail = -1;
         }
     }
 }
