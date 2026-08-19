@@ -15,6 +15,6 @@
 
 void push(int element);
 void pop();
-void peek();
+int peek();
 
 #endif

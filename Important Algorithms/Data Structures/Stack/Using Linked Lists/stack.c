@@ -5,14 +5,14 @@ extern node *stack;
 void push(int element)
 {
     node *NewNode = malloc(sizeof(node));
-    NewNode->element = element;
-    NewNode->next = NULL;
-
     if (NewNode == NULL)
     {
         printf(RED "Failed to allocate memory.\n" RESET);
         return;
     }
+
+    NewNode->element = element;
+    NewNode->next = NULL;
 
     if (stack != NULL)
     {
@@ -24,28 +24,24 @@ void push(int element)
     printf(GREEN "%i pushed to Stack.\n" RESET, element);
 }
 
-void peek()
+int peek()
 {
     if (stack == NULL)
     {
         printf(RED "Stack is empty.\n" RESET);
+        return 1;
     }
-    else 
-    {
-        printf(GREEN "Item at the top : %i\n" RESET, stack->element);
-    }
+    
+    printf(GREEN "Item at the top : %i\n" RESET, stack->element);
+    return 0;
 }
 
 void pop()
 {
-    if (stack == NULL)
+    if (!peek())
     {
-        printf(RED "Stack is empty.\n" RESET);
-        return;
+        node *temp = stack;
+        stack = stack->next;
+        free(temp);
     }
-    
-    node *temp = stack;
-    stack = stack->next;
-    printf(GREEN "Item popped : %i\n" RESET, temp->element);
-    free(temp);
 }
