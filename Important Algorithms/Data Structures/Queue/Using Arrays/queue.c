@@ -2,28 +2,25 @@
 
 extern int head;
 extern int tail;
+extern int count;
 extern int queue[];
 
 void enqueue(int element)
 {
-    if (head == -1 && tail == -1)
+    if (count >= LIMIT)
+    {
+        printf(RED "Queue is full.\n" RESET);
+        return;
+    }
+
+    if (head == -1)
     {
         head++;
     }
 
-    if (tail + 1 >= LIMIT)
-    {
-        if (head == 0 || tail++ % LIMIT == head)
-        {
-            printf(RED "Queue is full.\n" RESET);
-            return;
-        }
-        
-        tail = (tail + 1) % LIMIT;
-    }
-
-    tail++;
+    tail = (tail + 1) % LIMIT;
     queue[tail] = element;
+    count++;
     printf(GREEN "%i enqueued to the queue.\n" RESET, element);
 }
 
@@ -43,9 +40,10 @@ void dequeue()
 {
     if (!peek())
     {
-        head++;
+        head = (head + 1) % LIMIT;
+        count--;
 
-        if (head == tail)
+        if (count == 0)
         {
             head = -1;
             tail = -1;

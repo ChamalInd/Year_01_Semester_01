@@ -3,6 +3,7 @@
 int head = -1;
 int tail = -1;
 int queue[LIMIT];
+int count = 0;
 
 int main()
 {
