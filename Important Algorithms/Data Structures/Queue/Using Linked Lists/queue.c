@@ -47,6 +47,12 @@ void dequeue()
     {
         node *temp = head;
         head = head->next;
+
+        if (head == NULL)
+        {
+            tail = NULL;
+        }
+
         free(temp);
     }
 }
