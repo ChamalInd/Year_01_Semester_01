@@ -1,6 +1,7 @@
 #include "types.h"
 
-extern node *queue;
+extern node *head;
+extern node *tail;
 
 void enqueue(int element)
 {
@@ -15,18 +16,15 @@ void enqueue(int element)
     NewNode->element = element;
     NewNode->next = NULL;
 
-    if (queue == NULL)
+    if (head == NULL)
     {
-        queue = NewNode;
+        head = NewNode;
+        tail = NewNode;
     }
     else
     {
-        node *temp = queue;
-        while (temp->next != NULL)
-        {
-            temp = temp->next;
-        }
-        temp->next = NewNode;
+        tail->next = NewNode;
+        tail = NewNode;
     }
 
     printf(GREEN "%i enqueued to the queue.\n" RESET, element);
@@ -34,12 +32,12 @@ void enqueue(int element)
 
 int peek()
 {
-    if (queue == NULL)
+    if (head == NULL)
     {
         printf(RED "Queue is empty.\n" RESET);
         return 1;
     }
-    printf(GREEN "Item at the head : %i\n" RESET, queue->element);
+    printf(GREEN "Item at the head : %i\n" RESET, head->element);
     return 0;
 }
 
@@ -47,8 +45,8 @@ void dequeue()
 {
     if (!peek())
     {
-        node *temp = queue;
-        queue = queue->next;
+        node *temp = head;
+        head = head->next;
         free(temp);
     }
 }

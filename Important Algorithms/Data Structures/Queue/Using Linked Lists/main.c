@@ -1,6 +1,7 @@
 #include "types.h"
 
-node *queue;
+node *head = NULL;
+node *tail = NULL;
 
 int main()
 {
