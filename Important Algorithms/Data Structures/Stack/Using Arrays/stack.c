@@ -3,6 +3,8 @@
 extern int top;
 extern int stack[];
 
+// Time complexity : O(1) 
+// keep inserting to tail
 void push(int element)
 {
     if (top + 1 >= LIMIT)
@@ -16,6 +18,7 @@ void push(int element)
     printf(GREEN "%i pushed into the Stack.\n" RESET, element);
 }
 
+// Time complexity : O(1) 
 int peek()
 {
     if (top == -1)
@@ -28,6 +31,8 @@ int peek()
     return 0;
 }
 
+// Time complexity : O(1) 
+// keep removing from tail
 void pop()
 {
     if (!peek())

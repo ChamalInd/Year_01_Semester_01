@@ -5,6 +5,8 @@ extern int tail;
 extern int count;
 extern int queue[];
 
+// Time complexity : O(1) 
+// uses circular buffering to have the time complexity of O(1)
 void enqueue(int element)
 {
     if (count >= LIMIT)
@@ -24,6 +26,7 @@ void enqueue(int element)
     printf(GREEN "%i enqueued to the queue.\n" RESET, element);
 }
 
+// Time complexity : O(1) 
 int peek()
 {
     if (head == -1)
@@ -36,6 +39,7 @@ int peek()
     return 0;
 }
 
+// Time complexity : O(1) 
 void dequeue()
 {
     if (!peek())

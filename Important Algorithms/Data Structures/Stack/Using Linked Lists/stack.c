@@ -2,6 +2,8 @@
 
 extern node *stack;
 
+// Time complexity : O(1) 
+// O(1) can be achieved by inserting to head
 void push(int element)
 {
     node *NewNode = malloc(sizeof(node));
@@ -24,6 +26,7 @@ void push(int element)
     printf(GREEN "%i pushed to Stack.\n" RESET, element);
 }
 
+// Time complexity : O(1) 
 int peek()
 {
     if (stack == NULL)
@@ -36,6 +39,8 @@ int peek()
     return 0;
 }
 
+// Time complexity : O(1) 
+// O(1) can be achieved by removing from head
 void pop()
 {
     if (!peek())
