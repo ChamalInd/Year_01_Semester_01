@@ -1,11 +1,9 @@
 # Year 01 — Semester 01
 
-> Complete archive of course materials, lab work, assignments, implemented algorithms, and past papers for **Year 1 Semester 1** — Faculty of Science / Computer Science.
+> Complete archive of course materials, lab work, assignments, implemented algorithms, and past papers for **Year 1 Semester 1** — University of Colombo School of Computing / Computer Science.
 
 [![Semester](https://img.shields.io/badge/Semester-Y1S1-blue)](#)
 [![University](https://img.shields.io/badge/University-UoC-lightgrey)](#)
-[![Language](https://img.shields.io/badge/Language-C%20%7C%20LaTeX%20%7C%20Markdown-orange)](#)
-[![License](https://img.shields.io/badge/License-MIT-green)](#)
 
 ---
 
@@ -154,9 +152,6 @@ Year_01_Semester_01/
     ├── 2024/   # ENH 1301, 1302, SCS 1301–1307
     └── 2025/   # ENH 1301, 1302, SCS 1301–1307
 ```
-
-> **Note:** Generated from the current working tree. Some binary/build artifacts (`a.out`, `list`, `queue`, `stack`, etc.) and `.DS_Store` files are present locally but ignored via `.gitignore` where applicable.
-
 ---
 
 ## 🔬 Important Algorithms
