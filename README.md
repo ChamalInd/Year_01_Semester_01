@@ -26,6 +26,7 @@ Contents are organized into three main sections:
 | Code | Course |
 |---|---|
 | **ENH 1301** | Application Laboratory |
+| **ENH 1302** | Communication Skills |
 | **SCS 1301** | Data Structures and Program Design in C |
 | **SCS 1302** | Discrete Mathematics |
 | **SCS 1303** | Introduction to Software Engineering |
